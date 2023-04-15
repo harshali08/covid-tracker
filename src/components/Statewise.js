@@ -1,17 +1,24 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import Home from "./Home";
 import './Statewise.css'
+
 
 function Statewise() {
 //   
 const [data,setData]=useState([]);
+const [main,setMain]=useState([])
 
 const getCovidData=async ()=>{
  const res= await fetch(`https://api.rootnet.in/covid19-in/stats/latest`);
  const actualData=await res.json();
  const reqData=actualData.data.regional
- console.log(reqData)
+ const mainData=actualData.data.summary
+//  console.log(mainData)
+//  console.log(reqData)s
  setData(reqData)
-//  for(var i=0;i<36;i++){
+ setMain([mainData])
+ //  for(var i=0;i<36;i++){
 //  console.log(actualData.data.regional[i].loc)
 //  }
 }
@@ -19,8 +26,10 @@ const getCovidData=async ()=>{
     getCovidData();
   }, []);
   return (
+    <>
     <div>
-      <h1>COVID-19 DATA OF INDIA</h1>
+    <Link to='/'><button className="back">Back</button></Link>
+      <h1 className="state-title">COVID-19 DATA OF INDIA</h1>
       <div className="data-cont">
       <table>
       <thead className="title">
@@ -52,6 +61,8 @@ const getCovidData=async ()=>{
       </table>
       </div>
     </div>
+   
+    </>
   );
 }
 
