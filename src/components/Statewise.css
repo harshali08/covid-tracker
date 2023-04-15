@@ -11,12 +11,13 @@
 table{
      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
      border-collapse: collapse;
-     background-color: white;
+     background-color: aliceblue;
      margin-bottom:30px;
      /* padding:0px 20px; */
 }
 .title{
      height:5vh;
+     
      background-color: black;
      color: white;
      margin:0px;
