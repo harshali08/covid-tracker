@@ -1,6 +1,8 @@
 import React from 'react'
 import './Home.css'
 import { Link } from 'react-router-dom'
+import { AiOutlineArrowRight } from "react-icons/ai";
+
 
 function home() {
   return (
