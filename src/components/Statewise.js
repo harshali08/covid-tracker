@@ -12,6 +12,7 @@ function Statewise() {
     const actualData = await res.json();
     const reqData = actualData.data.regional;
     //  const mainData=actualData.data.summary
+    console.log(actualData)
     //  console.log(mainData)
     //  console.log(reqData)s
     setData(reqData);
@@ -40,8 +41,8 @@ function Statewise() {
                 <th>Deaths</th>
               </tr>
             </thead>
-
-            <tbody>
+            
+           <tbody>
               {data.map((currEle, index) => {
                 return (
                   <tr>
